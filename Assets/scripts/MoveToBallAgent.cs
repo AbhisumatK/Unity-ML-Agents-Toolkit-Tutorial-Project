@@ -32,7 +32,8 @@ public class MoveToBallAgent : Agent
         float moveSpeed = 3f;
         transform.localPosition += new Vector3(moveX, 0, moveZ) * Time.deltaTime * moveSpeed; // Move the agent based on the actions
 
-        
+        // small penalty every step to discourage idling
+        AddReward(-0.01f);
     }
     
     public override void Heuristic(in ActionBuffers actionsOut)
