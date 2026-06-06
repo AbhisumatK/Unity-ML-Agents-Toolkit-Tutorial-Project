@@ -15,7 +15,8 @@ public class MoveToBallAgent : Agent
     public override void OnEpisodeBegin()
     {
         // Reset the agent's position and the ball's position at the beginning of each episode
-        transform.localPosition = new Vector3(0.9f, 0.5f, -1.34f);
+        transform.localPosition = new Vector3(Random.Range(1.9f, -0.1f), 0.5f, Random.Range(-4.7f, 1.4f)); // Randomize the agent's starting position
+        ballTransform.localPosition = new Vector3(Random.Range(-3.1f, -0.9f), 0.5f, Random.Range(-4.7f, 1.55f)); // Randomize the ball's starting position
     }
     public override void CollectObservations(VectorSensor sensor)
     {
